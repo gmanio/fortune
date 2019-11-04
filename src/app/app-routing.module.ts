@@ -1,9 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule, Router } from '@angular/router';
-import { ApplicationStateService } from 'src/app/application-state.service';
+import { ApplicationStateService } from 'src/app/services/application-state.service';
 import { DesktopFrontPageComponent } from 'src/app/desktop-front-page/desktop-front-page.component';
-import { MobileFrontPageComponent } from 'src/app/mobile-front-page/mobile-front-page.component';
-
 
 const desktopRoutes: Routes = [
   { path: '', component: DesktopFrontPageComponent },
@@ -11,7 +9,10 @@ const desktopRoutes: Routes = [
 ];
 
 const mobileRoutes: Routes = [
-  { path: '', component: MobileFrontPageComponent },
+  {
+    path: '',
+    loadChildren: () => import('./mobile/mobile.module').then(m => m.MobileModule)
+  },
   { path: '**', redirectTo: '' }
 ];
 

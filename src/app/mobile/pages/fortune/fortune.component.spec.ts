@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MobileFrontPageComponent } from './mobile-front-page.component';
+import { FortuneComponent } from 'src/app/mobile/pages/fortune/fortune.component';
 
-describe('MobileFrontPageComponent', () => {
-  let component: MobileFrontPageComponent;
-  let fixture: ComponentFixture<MobileFrontPageComponent>;
+describe('FortuneComponent', () => {
+  let component: FortuneComponent;
+  let fixture: ComponentFixture<FortuneComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MobileFrontPageComponent ]
+      declarations: [ FortuneComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MobileFrontPageComponent);
+    fixture = TestBed.createComponent(FortuneComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

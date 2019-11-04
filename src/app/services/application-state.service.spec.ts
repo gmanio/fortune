@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { ApplicationStateService } from './application-state.service';
+import { ApplicationStateService } from 'src/app/services/application-state.service';
 
 describe('ApplicationStateService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
