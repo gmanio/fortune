@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { MobileFrontPageComponent } from 'src/app/mobile/pages/mobile-front-page/mobile-front-page.component';
 import { MobileRoutingModule } from 'src/app/mobile/mobile-routing.module';
 import { FortuneComponent } from 'src/app/mobile/pages/fortune/fortune.component';
+import { MatButtonModule, MatCardModule } from '@angular/material';
 
 
 
@@ -13,7 +14,9 @@ import { FortuneComponent } from 'src/app/mobile/pages/fortune/fortune.component
   ],
   imports: [
     CommonModule,
-    MobileRoutingModule
+    MobileRoutingModule,
+    MatCardModule,
+    MatButtonModule
   ]
 })
 export class MobileModule { }
