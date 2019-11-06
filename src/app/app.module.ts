@@ -10,6 +10,7 @@ import { ApplicationStateService } from 'src/app/services/application-state.serv
 import { MobileModule } from 'src/app/mobile/mobile.module';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { environment } from '../environments/environment';
     BrowserModule,
     AppRoutingModule,
     MobileModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
