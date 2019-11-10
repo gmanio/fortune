@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { DomSanitizer } from '@angular/platform-browser';
 import { BehaviorSubject } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-fortune',
@@ -32,8 +33,11 @@ export class FortuneComponent implements OnInit {
     const fetch$ = this.http
     .get(this.sampleUrl, {
       responseType: 'text'
-    });
-    this.fortuneData$.next(fetch$);
+    }).pipe(
+      map((res) => {
+        this.fortuneData$.next(this.sanitizer.bypassSecurityTrustHtml(res));
+      })
+    ).subscribe();
   }
 
   getFortuneData() {
